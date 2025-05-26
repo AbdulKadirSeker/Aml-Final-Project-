@@ -1,0 +1,55 @@
+/data/*
+!/data/.gitkeep
+
+# --- Python bytecode/cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual environments ---
+# If you use venv, .venv, env, etc.
+venv/
+.env/
+.venv/
+env/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- PyCharm/project files ---
+# IntelliJ IDEA / PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- OS-specific ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --- Logs and runtime files ---
+*.log
+*.sqlite3
+*.db
+
+# --- Distribution/build ---
+build/
+dist/
+*.egg-info/
+*.eggs/
+
+# --- Coverage reports ---
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
