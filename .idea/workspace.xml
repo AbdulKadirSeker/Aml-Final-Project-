@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8dd95f9-9d36-4b65-9109-b4a72096dcc8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Api/FileCompressor.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notebooks/0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1748094911487</updated>
       <workItem from="1748094913168" duration="430000" />
-      <workItem from="1748294368115" duration="465000" />
+      <workItem from="1748294368115" duration="513000" />
     </task>
     <servers />
   </component>
