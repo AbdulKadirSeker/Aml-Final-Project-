@@ -91,6 +91,15 @@ def get_latest_valuation(vals: pd.DataFrame) -> pd.DataFrame:
     return vals.loc[idx, ['player_id', 'market_value_in_eur']].reset_index(drop=True)
 
 
+def merge_player_data(players, stats, latest_valuations):
+    """
+    Joins players with their aggregated stats and latest market valuation.
+    """
+    df = players.merge(stats, on='player_id', how='left')
+    df = df.merge(latest_valuations[['player_id', 'market_value_in_eur']], on='player_id', how='left')
+    return df
+
+
 # --- Preprocessing ---
 def fillna_and_scale(df: pd.DataFrame, cols: list) -> tuple:
     df = df.copy()

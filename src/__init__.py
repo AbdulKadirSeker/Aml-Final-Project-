@@ -8,6 +8,7 @@ from .utils import (
     load_all,
     merge_two,
     merge_multiple,
+    merge_player_data,
     aggregate_player_stats,
     get_latest_valuation,
     fillna_and_scale,
