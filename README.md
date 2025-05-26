@@ -1,9 +1,15 @@
-# AML Final Project
+# _AML Final Project_
+<p>
+This is our final project in the AML course. We will analyse a dataset that provides detailed info on players, clubs, matches, and player market values from around 2012, and it's updated regularly regarding football. We will analyse it and make some predictions e.g player valuation in transfermarket, club successrate for next match and so on 
+</p>
+
+
+Dataset used: https://www.kaggle.com/datasets/davidcariboo/player-scores/versions/602
+___
 
 ## Project Stucture
 
 ```bash
-PlayerMarketValueProject/
 ├── .gitignore             ← files and folders Git should ignore
 ├── README.md              ← project overview and instructions
 ├── data/                  ← The football transfermarket dataset CSVs
@@ -21,4 +27,11 @@ PlayerMarketValueProject/
 │   └── figures/           ← exported images for reports
 └── requirements.txt       ← pinned Python dependencies
 ```
+___
+## Setup
+1) Download the dataset as a zip from [kaggle](https://www.kaggle.com/datasets/davidcariboo/player-scores/versions/602?resource=download). Extract all the .csv files into the `data` folder.
+2) Make sure you have set up a python environment. We used `python 3.12` and `conda`, as per the [course description](https://www.nbi.dk/~petersen/Teaching/AppliedMachineLearning2025.html).
+3) Run `pip install -r requirements.txt`, to make sure you are using the correct libraries.
+4) Done.
 
+___
