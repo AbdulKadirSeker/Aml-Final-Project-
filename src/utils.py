@@ -129,6 +129,39 @@ def scatter_actual_vs_pred(y_true, y_pred, title='Actual vs Predicted'):
     plt.show()
 
 
+# --- Age Computation ---
+def compute_age(df, date_col = 'date_of_birth', ref_date = '2025-05-27'):
+    df_copy = df.copy()
+    # Parse birth dates, coercing invalid entries to NaT
+    birth = pd.to_datetime(df[date_col], errors='coerce')
+    # Determine reference date
+    if ref_date is None:
+        today = pd.Timestamp.today()
+    else:
+        today = pd.to_datetime(ref_date)
+    # Calculate year difference
+    years = today.year - birth.dt.year
+    # Determine if each birthday has occurred this year
+    had_birthday = (today.month > birth.dt.month) | \
+                   ((today.month == birth.dt.month) & (today.day >= birth.dt.day))
+    # Compute age, subtracting 1 where birthday hasn't occurred
+    age = years - (~had_birthday).astype(pd.Int64Dtype())
+    # Ensure Int64 dtype and preserve NaT as <NA>
+    df_copy['age'] = age.astype(pd.Int64Dtype())
+    return df_copy
+
+# def compute_age(df):
+#     #yyyy-mm-dd
+#     ages = []
+#     counter = 0
+#     for i in df['date_of_birth']:
+#         if i == 'NaN':
+#             print('Computer lost')
+#             break
+#         print(f'{counter}: {i[:4]}')
+#         counter += 1
+
+
 # --- Pipeline Example ---
 def prepare_main_player_dataframe() -> pd.DataFrame:
     players = load_players()
@@ -137,3 +170,4 @@ def prepare_main_player_dataframe() -> pd.DataFrame:
     stats = aggregate_player_stats(appearances)
     latest = get_latest_valuation(valuations)
     return merge_tables(players, merge_tables(stats, latest, 'player_id'), 'player_id')
+

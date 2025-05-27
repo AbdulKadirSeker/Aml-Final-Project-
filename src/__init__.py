@@ -16,4 +16,5 @@ from .utils import (
     plot_distribution,
     scatter_actual_vs_pred,
     prepare_main_player_dataframe,
+    compute_age
 )
