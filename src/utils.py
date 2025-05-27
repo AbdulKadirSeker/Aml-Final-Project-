@@ -109,7 +109,7 @@ def fillna_and_scale(df: pd.DataFrame, cols: list) -> tuple:
 
 
 def encode_categorical(df: pd.DataFrame, cols: list) -> tuple:
-    encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
+    encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
     arr = encoder.fit_transform(df[cols])
     df_enc = pd.DataFrame(arr, columns=encoder.get_feature_names_out(cols), index=df.index)
     return df_enc, encoder
@@ -169,5 +169,5 @@ def prepare_main_player_dataframe() -> pd.DataFrame:
     valuations = load_player_valuations()
     stats = aggregate_player_stats(appearances)
     latest = get_latest_valuation(valuations)
-    return merge_tables(players, merge_tables(stats, latest, 'player_id'), 'player_id')
+    return merge_two(players, merge_two(stats, latest, 'player_id'), 'player_id')
 
