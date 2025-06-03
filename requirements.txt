@@ -1,8 +1,9 @@
 jupyterlab==4.4.3
+ipykernel
 matplotlib==3.10.3
-numpy==2.0.1
 pandas==2.2.3
 scikit-learn==1.6.1
 tensorflow==2.18.1
-charset-normalizer==3.4.2
+numpy==2.0.1
 h5py==3.13.0
+charset-normalizer==3.4.2
